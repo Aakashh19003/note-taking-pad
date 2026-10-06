@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> note taking pad</title>
+    <link rel="stylesheet" href="/styles/stylesheet.css">
+</head>
+<body>
+      <h1>Note Taking</h1>
+    <div>
+        <form action="/create" method="post">
+        <input type = "textarea" id = "title" placeholder = "Enter title" name="title">
+        <textarea id = "note" placeholder = "Enter Note" name="details"></textarea>
+        <input type ="submit" id = "save">Save Note</button>
+        </form>
+    <div>
+        <div class = "notes-container">
+            <% if(files.length > 0) { %>
+                <% files.forEach(function(val){ %>
+                    <div id = "notes">
+                <%= val %>
+            </div>
+              <% }) %>
+            <% } else { %>
+            <h2>no tasks yet</h2>
+         <% } %>
+            
+        </div>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
